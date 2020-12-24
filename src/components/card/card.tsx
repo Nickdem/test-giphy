@@ -1,5 +1,8 @@
 import React from 'react';
+
 import { Item } from '../../interfaces';
+
+import './card.css'
 
 interface Props {
   info: Item,
@@ -9,15 +12,17 @@ interface Props {
 const Card: React.FC<Props> = ({ info, setValue }) => {
   return (
     <div
-      style={{ width: '400px', height: '400px', padding: '1rem' }}
+      className="card"
       onClick={setValue}
     >
       {info.url.map((img: any, idx: any) => {
         return (
           <img
+            className="giph"
             key={idx}
-            style={{ width: '100%', height: info.url.length > 1 ? '50%' : '100%' }}
-            src={img} alt="item"
+            style={{ height: info.url.length > 1 ? '50%' : '100%' }}
+            src={img} 
+            alt="item"
           />
         )
       })}

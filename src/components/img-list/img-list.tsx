@@ -1,8 +1,12 @@
 import React, { useContext } from 'react';
-import { Context } from '../../context/context';
+
+import Card from '../card';
+import { Context } from '../../context';
+
 import { Item } from '../../interfaces';
 import { upgrateArr } from '../../utils';
-import Card from '../card/card';
+
+import './img-list.css'
 
 const ImgList: React.FC = () => {
 
@@ -24,8 +28,8 @@ const ImgList: React.FC = () => {
     return (
       <main>
         {newArr && newArr.map((d: any, i: number) =>
-          <div key={i} style={{ width: '700px', padding: '1rem' }}>
-            <h3>{d.name}</h3>
+          <div className="group" key={i}>
+            <h3 className="group-title">{d.name}</h3>
             {renderCard(d.url, d.name)}
           </div>
         )}
@@ -33,7 +37,7 @@ const ImgList: React.FC = () => {
     )
   }
   return (
-    <main style={{ display: 'flex' }}>
+    <main className="main">
       {arr && renderCard(arr)}
     </main>
   )

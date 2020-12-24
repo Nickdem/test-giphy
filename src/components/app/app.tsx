@@ -1,11 +1,14 @@
 import React from 'react';
-import Header from './components/header/header';
-import ImgList from './components/img-list/img-list';
-import { State } from './context/state';
+
+import Header from '../header';
+import ImgList from '../img-list';
+import { State } from '../../context';
+
+import './app.css'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="app">
       <State>
         <Header />
         <ImgList />

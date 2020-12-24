@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
-import { Context } from '../../context/context';
+
+import { Context } from '../../context';
+
+import './header.css'
 
 const Header: React.FC = () => {
 
@@ -14,23 +17,27 @@ const Header: React.FC = () => {
   } = useContext(Context);
 
   return (
-    <header>
+    <header className="header">
       <input
+        className="input"
         value={value}
         onChange={changeValue}
       />
       <button
+        className="load-btn"
         onClick={() => loadGiph(value)}
         disabled={loading}
       >
-        {loading ? 'загрузка...' : 'загрузить'}
+        {loading ? 'загрузка!!' : 'загрузить'}
       </button>
       <button
+        className="delete-btn"
         onClick={deleteGiphs}
       >
         Очистить
         </button>
       <button
+        className="group-btn"
         onClick={() => setGroup(!group)}
       >
         {group ? 'Разгруппировать' : 'Группировать'}
